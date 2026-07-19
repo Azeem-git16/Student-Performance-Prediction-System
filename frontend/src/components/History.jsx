@@ -6,10 +6,12 @@ function History() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://127.0.0.1:8000/history")
-      .then((res) => setHistory(res.data))
-      .catch((err) => console.log(err));
+    const API_URL =
+      import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
+      axios.get(`${API_URL}/history`)
+        .then((res) => setHistory(res.data))
+        .catch((err) => console.log(err));
   }, []);
 
   const filtered = history.filter(
