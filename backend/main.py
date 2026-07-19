@@ -198,3 +198,6 @@ def analytics():
         "average_study_hours": round(row[2], 2) if row[2] else 0,
         "average_sleep_hours": round(row[3], 2) if row[3] else 0,
     }
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
