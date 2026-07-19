@@ -1,0 +1,159 @@
+@import "tailwindcss";
+/* Enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+/* ===========================
+   Global Styles
+=========================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* ===========================
+   Text Selection
+=========================== */
+
+::selection {
+  background: #2563eb;
+  color: white;
+}
+
+/* ===========================
+   Images
+=========================== */
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+input,
+select,
+textarea {
+  transition: all 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.card {
+  @apply bg-white rounded-2xl shadow-lg;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+}
+
+/* ===========================
+   Section Container
+=========================== */
+
+.section {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+/* ===========================
+   Primary Button
+=========================== */
+
+.btn-primary {
+  @apply bg-gradient-to-r from-blue-600 to-indigo-600
+  text-white
+  rounded-xl
+  px-6
+  py-3
+  font-semibold
+  shadow-lg
+  transition-all
+  duration-300
+  hover:scale-105
+  hover:shadow-xl;
+}
+
+/* ===========================
+   Secondary Button
+=========================== */
+
+.btn-secondary {
+  @apply bg-white
+  border
+  border-slate-300
+  rounded-xl
+  px-6
+  py-3
+  font-semibold
+  transition-all
+  duration-300
+  hover:bg-slate-100;
+}
+
+/* ===========================
+   Input Style
+=========================== */
+
+.input-field {
+  @apply w-full
+  rounded-xl
+  border
+  border-slate-300
+  px-4
+  py-3
+  focus:ring-2
+  focus:ring-blue-500;
+}
