@@ -63,6 +63,13 @@ def predict(student: Student):
     probabilities = model.predict_proba(data)[0]
     confidence = round(max(probabilities) * 100, 2)
 
+    try:
+        explanation, summary = explainer.explain(data)
+    except Exception as e:
+        print("Explainability Error:", e)
+        explanation = {}
+        summary = "Explainability unavailable."
+
     # Suggestions
     suggestions = []
 
