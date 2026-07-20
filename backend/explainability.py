@@ -22,12 +22,14 @@ class Explainability:
 
         shap_values = self.explainer.shap_values(np.array(data))
 
-        prediction = self.model.predict(data)[0]
-
-        classes = list(self.model.classes_)
-        class_index = classes.index(prediction)
-
-        values = shap_values[class_index][0]
+            # Handle different SHAP output formats
+        if isinstance(shap_values, list):
+            prediction = self.model.predict(data)[0]
+            classes = list(self.model.classes_)
+            class_index = classes.index(prediction)
+            values = shap_values[class_index][0]
+        else:
+            values = shap_values[0]
 
         contributions = {}
 
