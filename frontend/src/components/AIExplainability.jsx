@@ -35,41 +35,35 @@ const AIExplainability = ({ explanation, summary }) => {
 
       <div className="space-y-5 mt-6">
 
-        <div className="flex items-center gap-2">
-
-          {index === 0 && (
-            <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs font-bold text-yellow-700">
-              #1
-            </span>
-          )}
-
-          {index === 1 && (
-            <span className="rounded-full bg-slate-200 px-2 py-1 text-xs font-bold">
-              #2
-            </span>
-          )}
-
-          {index === 2 && (
-            <span className="rounded-full bg-orange-100 px-2 py-1 text-xs font-bold text-orange-700">
-              #3
-            </span>
-          )}
-
-          <span className="font-medium text-slate-700 dark:text-slate-300">
-            {feature}
-          </span>
-
-        </div>
-
         {features.map(([feature, value], index) => (
 
-          <div key={feature}>
+          <div key={feature} className="space-y-2">
 
             <div className="flex justify-between mb-2">
 
-              <span className="font-medium text-slate-700 dark:text-slate-300">
-                {feature}
-              </span>
+              <div className="flex items-center gap-2">
+                {index === 0 && (
+                  <span className="rounded-full bg-yellow-100 px-2 py-1 text-xs font-bold text-yellow-700">
+                    #1
+                  </span>
+                )}
+
+                {index === 1 && (
+                  <span className="rounded-full bg-slate-200 px-2 py-1 text-xs font-bold">
+                    #2
+                  </span>
+                )}
+
+                {index === 2 && (
+                  <span className="rounded-full bg-orange-100 px-2 py-1 text-xs font-bold text-orange-700">
+                    #3
+                  </span>
+                )}
+
+                <span className="font-medium text-slate-700 dark:text-slate-300">
+                  {feature}
+                </span>
+              </div>
 
               <span className="font-bold text-indigo-600 dark:text-indigo-400">
                 {value}%
