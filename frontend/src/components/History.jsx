@@ -7,7 +7,7 @@ function History() {
 
   useEffect(() => {
     const API_URL =
-      import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+      import.meta.env.VITE_API_URL || "https://student-performance-api-5aw9.onrender.com";
 
       axios.get(`${API_URL}/history`)
         .then((res) => setHistory(res.data))
